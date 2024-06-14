@@ -25,7 +25,7 @@ public class Recover extends MainGame
                     answers = newAnswers;
                 }
                 
-                if((Integer.parseInt(inPutNumber)/1000) < 1 && !inPutNumbers[0].equals("0"))
+                if(inPutNumbers.length<4)
                 {   
                     jFrame2 = new JFrame("Wrong"); 
                     jFrame2.setSize(450, 100);
@@ -37,7 +37,7 @@ public class Recover extends MainGame
                     lbWrong.setVisible(true);
                     System.out.println("you enter less than 4 numbers");
                 }
-                else if((Integer.parseInt(inPutNumber)/1000) > 9 )
+                else if(inPutNumbers.length>4 )
                 {
                     jFrame2 = new JFrame("Wrong"); 
                     jFrame2.setSize(450, 100);
