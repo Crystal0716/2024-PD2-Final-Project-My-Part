@@ -1,30 +1,30 @@
-import java.util.Scanner;
+import java.util.Arrays;
 import java.util.Random;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class MainGame 
 {
-    public static int recoverORnot = 0;
-    public static void main(String[] args) 
-    {
-        String input = null;
-        int answer = Recover.randomNumber();
-        int playTime = 0 ;
-
-        GuiRecover GuiRecover = new GuiRecover();
-        boolean getOneMoreChance = false;
-        if(recoverORnot == 0 )
-        {
-            Recover.getNewChance(input,answer,playTime);
-        }
-        else if(recoverORnot == 1)
-        {
-            getOneMoreChance = true ;
-        }
-
-        System.out.println("finish");
-    }
-
     
+    public static String rightAnswer[] = getAnswer.answer();
+    public static void main(String args[])
+    {
+        GuiRecover GuiRecover = new GuiRecover();
+    }
 }
 
-
+class getAnswer 
+{
+    public static String[] answer()
+    {
+        int computerAnswer  = Recover.randomNumber();
+        String computerAnswers[] = Integer.toString(computerAnswer).split("");
+        if(computerAnswers.length <4)
+        {
+            String[] newAnswers = {"0", computerAnswers[0],computerAnswers[1],computerAnswers[2]};
+            computerAnswers= newAnswers;
+        }
+        return computerAnswers;
+    }
+}
